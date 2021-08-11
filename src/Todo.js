@@ -3,12 +3,12 @@ import useToggle from "./hooks/useToggle";
 import { ListItem, ListItemText, Checkbox } from "@material-ui/core";
 import { IconButton, ListItemSecondaryAction } from "@material-ui/core";
 import EditTodoForm from "./EditTodoForm";
-import { TodosContext } from "./context/todos.context";
+import { DispatchContext } from "./context/todos.context";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 
 function Todo({ task, completed, id }) {
-  const { dispatch } = useContext(TodosContext);
+  const dispatch = useContext(DispatchContext);
   const [isEditing, toggle] = useToggle(false);
   return (
     <ListItem style={{ height: "64px" }}>
