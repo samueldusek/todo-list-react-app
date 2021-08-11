@@ -5,8 +5,6 @@ import { Paper, Toolbar, Typography, AppBar, Grid } from "@material-ui/core";
 import { TodosProvider } from "./context/todos.context";
 
 function TodoApp() {
-  const initialTodos = [{ id: 1, task: "Call mum", completed: false }];
-
   return (
     <div>
       <Paper
