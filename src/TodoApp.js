@@ -1,5 +1,4 @@
 import React from "react";
-import useTodoState from "./hooks/useTodoState";
 import TodoList from "./TodoList";
 import TodoForm from "./TodoForm";
 import { Paper, Toolbar, Typography, AppBar, Grid } from "@material-ui/core";
@@ -7,8 +6,6 @@ import { TodosProvider } from "./context/todos.context";
 
 function TodoApp() {
   const initialTodos = [{ id: 1, task: "Call mum", completed: false }];
-  const { todos, addTodo, editTodo, toggleTodo, removeTodo } =
-    useTodoState(initialTodos);
 
   return (
     <div>
@@ -28,13 +25,8 @@ function TodoApp() {
         <Grid container justifyContent="center" style={{ marginTop: "1rem" }}>
           <Grid item xs={11} md={8} lg={4}>
             <TodosProvider>
-              <TodoForm addTodo={addTodo} />
-              <TodoList
-                todos={todos}
-                removeTodo={removeTodo}
-                toggleTodo={toggleTodo}
-                editTodo={editTodo}
-              />
+              <TodoForm />
+              <TodoList />
             </TodosProvider>
           </Grid>
         </Grid>
